@@ -24,13 +24,17 @@ function generatePassword(){
   
   // WHEN prompted for the length of the password
   // THEN I choose a length of at least 8 characters and no more than 128 characters
-  var passwordLength = prompt("Please enter a number value between 8-128 for the length of your password.");
+  var passwordLength = prompt("Please enter a number value between 8-128 for the length of your password.");{
+    while (passwordLength > 128 || passwordLength < 8) {
+      passwordLength = prompt("Please enter a valid number between 8-128.");
+    }
+  }
   
   // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-  var upperCase = confirm("Do you want uppercase letters?");
-  var lowerCase = confirm("Do you want lowercase letters?");
-  var numbers = confirm("Do you want nubmers?");
-  var specialChars = confirm("Do you want special characters?");
+  var upperCase = confirm("Do you want uppercase letters? Okay for Yes, Cancel for No.");
+  var lowerCase = confirm("Do you want lowercase letters? Okay for Yes, Cancel for No.");
+  var numbers = confirm("Do you want nubmers? Okay for Yes, Cancel for No.");
+  var specialChars = confirm("Do you want special characters? Okay for Yes, Cancel for No.");
   
   // THEN my input should be validated and at least one character type should be selected
 
