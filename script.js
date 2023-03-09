@@ -17,10 +17,11 @@ generateBtn.addEventListener("click", writePassword);
 //Password Generation
 function generatePassword(){
   let password = "";
+  console.log("Button Clicked");
 
   // I am presented with a series of prompts for password criteria
   // THEN I select which criteria to include in the password
-  alert('We are now going to build your password. Please answer the following questions.');
+  alert("A new password will be generated based on your answers to the following questions.");
   
   // WHEN prompted for the length of the password
   // THEN I choose a length of at least 8 characters and no more than 128 characters
@@ -28,16 +29,38 @@ function generatePassword(){
     while (passwordLength > 128 || passwordLength < 8){
       passwordLength = prompt("Please enter a valid number between 8-128.");
     }
+    console.log(passwordLength);
   }
   
   // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-  var upperCase = confirm("Do you want uppercase letters? Okay for Yes, Cancel for No.");
+  var upperCase = confirm("Click 'Okay' to include uppercase letters.")
+    console.log(upperCase);
+    //If else statement to determine inclusion of uppercase
 
-  var lowerCase = confirm("Do you want lowercase letters? Okay for Yes, Cancel for No.");
 
-  var numbers = confirm("Do you want nubmers? Okay for Yes, Cancel for No.");
+  var lowerCase = confirm("Click 'Okay' to include lowercase letters.")
+    console.log(lowerCase);
 
-  var specialChars = confirm("Do you want special characters? Okay for Yes, Cancel for No.");
+  //If else statement to determine inclusion of lowercase
+  var numbers = confirm("Click 'Okay' to include numbers.")
+    console.log(numbers);
+  //If else statement to determine inclusion of numbers
+  var specialChars = confirm("Click 'Okay' to include special characters.");
+    console.log(specialChars);
+  //If else statement to determine inclusion of special chars
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
   
   // THEN my input should be validated and at least one character type should be selected
 
