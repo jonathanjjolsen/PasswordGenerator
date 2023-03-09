@@ -15,6 +15,13 @@ generateBtn.addEventListener("click", writePassword);
 
 
 //Password Generation
+
+let passSet = '';
+let lowerCaseSet = 'abcdefghijklmnopqrstuvwxyz';
+let upperCaseSet = lowerCaseSet.toUpperCase();
+let numberSet = '0123456789';
+let specialSet = '?!@#$%&*';
+
 function generatePassword(){
   let password = "";
   console.log("Button Clicked");
@@ -40,29 +47,47 @@ function generatePassword(){
 
   var lowerCase = confirm("Click 'Okay' to include lowercase letters.")
     console.log(lowerCase);
-
   //If else statement to determine inclusion of lowercase
+  
   var numbers = confirm("Click 'Okay' to include numbers.")
     console.log(numbers);
   //If else statement to determine inclusion of numbers
+  
   var specialChars = confirm("Click 'Okay' to include special characters.");
     console.log(specialChars);
   //If else statement to determine inclusion of special chars
-  
-  
-  
-
-
-
-
-
-
-
 
 
 
   
   // THEN my input should be validated and at least one character type should be selected
+  // If statements to verify the user's input. If they have chosen to use one of the selected types, that respective character set will be added to the array pool.
+  if(upperCase) {
+    passSet += upperCaseSet;
+  }
+  
+  if(lowerCase) {
+    passSet += lowerCaseSet;
+  }
+
+  if(numbers){
+    passSet += numberSet;
+  }
+
+  if(specialChars){
+    passSet += specialSet;
+  }
+
+  console.log(passSet);
+  
+  //Resets password array to nothing for each regeneration.
+  passSet = '';
+
+
+
+
+
+
 
   // THEN a password is generated that matches the selected criteria
 
