@@ -15,15 +15,13 @@ generateBtn.addEventListener("click", writePassword);
 
 
 //Password Generation
-
-let passSet = '';
+let password = "";
 let lowerCaseSet = 'abcdefghijklmnopqrstuvwxyz';
 let upperCaseSet = lowerCaseSet.toUpperCase();
 let numberSet = '0123456789';
 let specialSet = '?!@#$%&*';
 
 function generatePassword(){
-  let password = "";
   console.log("Button Clicked"); //For dev visual
 
   // I am presented with a series of prompts for password criteria
@@ -59,23 +57,40 @@ function generatePassword(){
 
 
 
+
   
   // THEN my input should be validated and at least one character type should be selected
   // If statements to verify the user's input. If they have chosen to use one of the selected types, that respective character set will be added to the array pool.
+    
+
+    let passSet = [];
+
     if(upperCase) {
-      passSet += upperCaseSet
+      passSet += upperCaseSet;
     }
     if(lowerCase) {
-      passSet += lowerCaseSet
+      passSet += lowerCaseSet;
     }
 
     if(numbers){
-      passSet += numberSet
+      passSet += numberSet;
     }
 
     if(specialChars){
-      passSet += specialSet
+      passSet += specialSet;
     }
+     
+    let chosenChars = [];
+
+    while (chosenChars.length < passwordLength){
+      const character = passSet[Math.floor(Math.random() * passSet.length)];
+
+      chosenChars.push(character);
+      chosenChars.toString();
+      console.log(chosenChars);
+    }
+    console.log(password);
+
 
 
 
@@ -87,7 +102,6 @@ function generatePassword(){
   
   
   //Resets password array to nothing for each regeneration.
-  passSet = '';
 
 
 
