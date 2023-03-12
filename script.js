@@ -82,34 +82,14 @@ function generatePassword(){
      
     let chosenChars = [];
 
+    
     while (chosenChars.length < passwordLength){
       const character = passSet[Math.floor(Math.random() * passSet.length)];
 
       chosenChars.push(character);
-      chosenChars.toString();
-      console.log(chosenChars);
     }
-    console.log(password);
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  //Resets password array to nothing for each regeneration.
-
-
-
-
-
-
-
-  // THEN a password is generated that matches the selected criteria
+    console.log(chosenChars);
+    let password = chosenChars.join("");
 
   // THEN the password is either displayed in an alert or written to the page//
   return password;
