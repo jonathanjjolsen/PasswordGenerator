@@ -24,7 +24,7 @@ let specialSet = '?!@#$%&*';
 
 function generatePassword(){
   let password = "";
-  console.log("Button Clicked");
+  console.log("Button Clicked"); //For dev visual
 
   // I am presented with a series of prompts for password criteria
   // THEN I select which criteria to include in the password
@@ -33,7 +33,7 @@ function generatePassword(){
   // WHEN prompted for the length of the password
   // THEN I choose a length of at least 8 characters and no more than 128 characters
   var passwordLength = prompt("Please enter a number value between 8-128 for the length of your password.");{
-    while (passwordLength > 128 || passwordLength < 8){
+    while (passwordLength > 128 || passwordLength < 4){
       passwordLength = prompt("Please enter a valid number between 8-128.");
     }
     console.log(passwordLength);
@@ -41,20 +41,20 @@ function generatePassword(){
   
   // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
   var upperCase = confirm("Click 'Okay' to include uppercase letters.")
-    console.log(upperCase);
+    console.log(upperCase); //For dev visual
     //If else statement to determine inclusion of uppercase
 
 
   var lowerCase = confirm("Click 'Okay' to include lowercase letters.")
-    console.log(lowerCase);
+    console.log(lowerCase); //For dev visual
   //If else statement to determine inclusion of lowercase
   
   var numbers = confirm("Click 'Okay' to include numbers.")
-    console.log(numbers);
+    console.log(numbers); //For dev visual
   //If else statement to determine inclusion of numbers
   
   var specialChars = confirm("Click 'Okay' to include special characters.");
-    console.log(specialChars);
+    console.log(specialChars); //For dev visual
   //If else statement to determine inclusion of special chars
 
 
@@ -62,23 +62,29 @@ function generatePassword(){
   
   // THEN my input should be validated and at least one character type should be selected
   // If statements to verify the user's input. If they have chosen to use one of the selected types, that respective character set will be added to the array pool.
-  if(upperCase) {
-    passSet += upperCaseSet;
-  }
+    if(upperCase) {
+      passSet += upperCaseSet
+    }
+    if(lowerCase) {
+      passSet += lowerCaseSet
+    }
+
+    if(numbers){
+      passSet += numberSet
+    }
+
+    if(specialChars){
+      passSet += specialSet
+    }
+
+
+
   
-  if(lowerCase) {
-    passSet += lowerCaseSet;
-  }
-
-  if(numbers){
-    passSet += numberSet;
-  }
-
-  if(specialChars){
-    passSet += specialSet;
-  }
-
-  console.log(passSet);
+  
+  
+  
+  
+  
   
   //Resets password array to nothing for each regeneration.
   passSet = '';
