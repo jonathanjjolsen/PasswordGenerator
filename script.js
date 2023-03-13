@@ -26,11 +26,16 @@ function generatePassword(){
   alert("A new password will be generated based on your answers to the following questions.");
   
   // Conditional for obtaining length of password
+  function verifyNumber(str){
+    return /^[0-9]+$/.test(str);
+  }
   var passwordLength = prompt("Please enter a number value between 8-128 for the length of your password.");{
-    while (passwordLength > 128 || passwordLength < 8){
+    verified = verifyNumber(passwordLength);
+    console.log(verified); //For dev visual
+    while (passwordLength > 128 || passwordLength < 8 || verified == false){
       passwordLength = prompt("Please enter a valid number between 8-128.");
+      verified = verifyNumber(passwordLength);
     }
-    console.log(passwordLength);
   }
   
   //Confirmation of desired character types
