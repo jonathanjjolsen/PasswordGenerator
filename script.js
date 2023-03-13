@@ -15,13 +15,13 @@ generateBtn.addEventListener("click", writePassword);
 
 
 //Password Generation
-let password = "";
 let lowerCaseSet = 'abcdefghijklmnopqrstuvwxyz';
 let upperCaseSet = lowerCaseSet.toUpperCase();
 let numberSet = '0123456789';
 let specialSet = '?!@#$%&*';
 
 function generatePassword(){
+  let password = "";
   console.log("Button Clicked"); //For dev visual
 
   // I am presented with a series of prompts for password criteria
@@ -61,35 +61,47 @@ function generatePassword(){
   
   // THEN my input should be validated and at least one character type should be selected
   // If statements to verify the user's input. If they have chosen to use one of the selected types, that respective character set will be added to the array pool.
-    
+  function getCharacter(str) {
+    const randomValue = Math.floor(Math.random() * str.length);
+    return str[randomValue];
+  }
+  
+  if(upperCase){
+    password = password + getCharacter(upperCaseSet);
+  }
+  if(lowerCase){
+    password = password + getCharacter(lowerCaseSet);
+  }
+  if(numbers){
+    password = password + getCharacter(numberSet);
+  }
+  if(specialChars){
+    password = password + getCharacter(specialSet);
+  }
 
-    let passSet = [];
+    let passSet = "";
 
     if(upperCase) {
-      passSet += upperCaseSet;
+      passSet = passSet + upperCaseSet;
     }
     if(lowerCase) {
-      passSet += lowerCaseSet;
+      passSet = passSet + lowerCaseSet;
     }
 
     if(numbers){
-      passSet += numberSet;
+      passSet = passSet + numberSet;
     }
 
     if(specialChars){
-      passSet += specialSet;
+      passSet = passSet + specialSet;
     }
      
-    let chosenChars = [];
-
-    
-    while (chosenChars.length < passwordLength){
-      const character = passSet[Math.floor(Math.random() * passSet.length)];
-
-      chosenChars.push(character);
+    while(password.length < passwordLength) {
+      password = password + getCharacter(passSet);
     }
-    console.log(chosenChars);
-    let password = chosenChars.join("");
+    
+    // console.log(chosenChars);
+    // let password = chosenChars.join("");
 
   // THEN the password is either displayed in an alert or written to the page//
   return password;
