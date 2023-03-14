@@ -6,7 +6,7 @@ This is a webpage that creates a password for you based on specific criteria. Af
 ## Usage:
 After landing on the page, the user should press the red generate password button. This will prompt the user to choose a desired length, followed by some conditional choices that will set the character type list to be used in generation. Once the choices have been confirmed, the program will generate a new password and output it to the "New Password" box in the center of the screen.
 
-## Link to Deployed URL:
+## Link to Deployed URL: https://jonathanjjolsen.github.io/PasswordGenerator/
 
 ## Screenshot:
 ![Password Generator](Assets\Screenshot.jpg)
